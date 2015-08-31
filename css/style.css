@@ -1,0 +1,1160 @@
+@charset "UTF-8";
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+/* line 15, ../scss/style.scss */
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+/* line 19, ../scss/style.scss */
+html {
+  font-size: 62.5%;
+}
+
+/* line 23, ../scss/style.scss */
+body {
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  color: #111433;
+  background-color: #ffffff;
+}
+
+/* line 32, ../scss/style.scss */
+a {
+  color: #EF2D56;
+  text-decoration: none;
+}
+
+/* line 37, ../scss/style.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 41, ../scss/style.scss */
+input {
+  font-family: sans-serif;
+  font-size: 1.6rem;
+}
+
+/* remove “X” from search input field */
+/* line 47, ../scss/style.scss */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+/* line 51, ../scss/style.scss */
+input[type=text]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* line 52, ../scss/style.scss */
+input[type=text]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* -------------------------------- 
+
+Main Components 
+
+-------------------------------- */
+/* line 60, ../scss/style.scss */
+header {
+  height: 100px;
+  background: #19647E;
+}
+
+/* line 65, ../scss/style.scss */
+.gearbox-dropdown-wrapper {
+  display: inline-block;
+  position: relative;
+  height: 40px;
+  margin: 30px 0 0 5%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 73, ../scss/style.scss */
+.gearbox-dropdown-trigger {
+  display: block;
+  position: relative;
+  padding: 0 36px 0 20px;
+  line-height: 40px;
+  background-color: #37392E;
+  color: #ffffff;
+  border-radius: 3px;
+}
+/* line 82, ../scss/style.scss */
+.no-touch .gearbox-dropdown-trigger:hover {
+  background-color: #f14569;
+}
+/* line 86, ../scss/style.scss */
+.gearbox-dropdown-trigger::before, .gearbox-dropdown-trigger::after {
+  /* this is the arrow inside the dropdown trigger*/
+  content: '';
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  height: 2px;
+  width: 9px;
+  background: #ffffff;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: width 0.3s, -webkit-transform 0.3s;
+  -moz-transition: width 0.3s, -moz-transform 0.3s;
+  transition: width 0.3s, transform 0.3s;
+}
+/* line 100, ../scss/style.scss */
+.gearbox-dropdown-trigger::before {
+  right: 22px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 105, ../scss/style.scss */
+.gearbox-dropdown-trigger::after {
+  right: 17px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+@media only screen and (min-width: 1024px) {
+  /* line 73, ../scss/style.scss */
+  .gearbox-dropdown-trigger {
+    font-size: 1.5rem;
+  }
+  /* line 113, ../scss/style.scss */
+  .gearbox-dropdown-trigger.dropdown-is-active {
+    background-color: #EF2D56;
+  }
+  /* line 116, ../scss/style.scss */
+  .no-touch .gearbox-dropdown-trigger.dropdown-is-active:hover {
+    background-color: #f14569;
+  }
+  /* line 120, ../scss/style.scss */
+  .gearbox-dropdown-trigger.dropdown-is-active::before, .gearbox-dropdown-trigger.dropdown-is-active::after {
+    /* transform the arrow into a 'X' */
+    width: 14px;
+  }
+  /* line 125, ../scss/style.scss */
+  .gearbox-dropdown-trigger.dropdown-is-active::before {
+    /* transform the arrow into a 'X' */
+    -webkit-transform: translateX(5px) rotate(-45deg);
+    -moz-transform: translateX(5px) rotate(-45deg);
+    -ms-transform: translateX(5px) rotate(-45deg);
+    -o-transform: translateX(5px) rotate(-45deg);
+    transform: translateX(5px) rotate(-45deg);
+  }
+  /* line 130, ../scss/style.scss */
+  .gearbox-dropdown-trigger.dropdown-is-active::after {
+    /* transform the arrow into a 'X' */
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+/* line 138, ../scss/style.scss */
+.gearbox-dropdown h2,
+.gearbox-dropdown-content a,
+.gearbox-dropdown-content ul a {
+  height: 50px;
+  line-height: 50px;
+}
+@media only screen and (min-width: 768px) {
+  /* line 138, ../scss/style.scss */
+  .gearbox-dropdown h2,
+  .gearbox-dropdown-content a,
+  .gearbox-dropdown-content ul a {
+    height: 60px;
+    line-height: 60px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  /* line 138, ../scss/style.scss */
+  .gearbox-dropdown h2,
+  .gearbox-dropdown-content a,
+  .gearbox-dropdown-content ul a {
+    height: 50px;
+    line-height: 50px;
+  }
+}
+
+/* line 155, ../scss/style.scss */
+.gearbox-dropdown h2,
+.gearbox-dropdown-content a,
+.gearbox-dropdown-content ul a,
+.gearbox-dropdown-content .gearbox-divider {
+  padding: 0 20px;
+}
+
+/* line 162, ../scss/style.scss */
+.gearbox-dropdown {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111433;
+  color: #ffffff;
+  visibility: hidden;
+  /* Force Hardware Acceleration */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-transition: -webkit-transform 0.5s 0s, visibility 0s 0.5s;
+  -moz-transition: -moz-transform 0.5s 0s, visibility 0s 0.5s;
+  transition: transform 0.5s 0s, visibility 0s 0.5s;
+}
+/* line 180, ../scss/style.scss */
+.gearbox-dropdown h2 {
+  /* dropdown title - mobile version only */
+  position: relative;
+  z-index: 1;
+  color: #585b70;
+  background-color: #111433;
+  border-bottom: 1px solid #242743;
+}
+/* line 189, ../scss/style.scss */
+.gearbox-dropdown .gearbox-close {
+  /* 'X' close icon - mobile version only */
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  height: 50px;
+  width: 50px;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  color: transparent;
+}
+/* line 204, ../scss/style.scss */
+.gearbox-dropdown .gearbox-close::after, .gearbox-dropdown .gearbox-close::before {
+  /* this is the 'X' icon */
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  height: 20px;
+  width: 2px;
+  background-color: #ffffff;
+}
+/* line 215, ../scss/style.scss */
+.gearbox-dropdown .gearbox-close::after {
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+/* line 219, ../scss/style.scss */
+.gearbox-dropdown .gearbox-close::before {
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  -moz-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  -ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  -o-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+}
+/* line 225, ../scss/style.scss */
+.gearbox-dropdown.dropdown-is-active {
+  visibility: visible;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: -webkit-transform 0.5s 0s, visibility 0s 0s;
+  -moz-transition: -moz-transform 0.5s 0s, visibility 0s 0s;
+  transition: transform 0.5s 0s, visibility 0s 0s;
+}
+@media only screen and (min-width: 768px) {
+  /* line 233, ../scss/style.scss */
+  .gearbox-dropdown .gearbox-close {
+    top: 5px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  /* line 162, ../scss/style.scss */
+  .gearbox-dropdown {
+    position: absolute;
+    top: calc(100% - 2px);
+    /* reset style*/
+    height: auto;
+    width: auto;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    background-color: #ffffff;
+    color: #111433;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px);
+    -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s, -webkit-transform 0.3s 0s;
+    -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s, -moz-transform 0.3s 0s;
+    transition: opacity 0.3s 0s, visibility 0s 0.3s, transform 0.3s 0s;
+  }
+  /* line 252, ../scss/style.scss */
+  .open-to-left .gearbox-dropdown {
+    /* use the .open-to-left class if you want to open the dropdown on the left */
+    right: 0;
+    left: auto;
+  }
+  /* line 258, ../scss/style.scss */
+  .gearbox-dropdown h2, .gearbox-dropdown .gearbox-close {
+    /* on desktop - hide title and 'X' */
+    display: none;
+  }
+  /* line 263, ../scss/style.scss */
+  .gearbox-dropdown.dropdown-is-active {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: opacity 0.3s 0s, visibility 0.3s 0s, -webkit-transform 0.3s 0s;
+    -moz-transition: opacity 0.3s 0s, visibility 0.3s 0s, -moz-transform 0.3s 0s;
+    transition: opacity 0.3s 0s, visibility 0.3s 0s, transform 0.3s 0s;
+  }
+}
+
+/* line 271, ../scss/style.scss */
+.gearbox-dropdown-content, .gearbox-dropdown-content ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+  padding-top: 50px;
+}
+/* line 282, ../scss/style.scss */
+.gearbox-dropdown-content a, .gearbox-dropdown-content ul a {
+  display: block;
+  color: #ffffff;
+  /* truncate text with ellipsis if too long */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-top-width: 1px;
+  border-color: #242743;
+  border-style: solid;
+}
+/* line 295, ../scss/style.scss */
+.gearbox-dropdown-content li:first-of-type > a, .gearbox-dropdown-content ul li:first-of-type > a {
+  border-top-width: 0;
+}
+/* line 299, ../scss/style.scss */
+.gearbox-dropdown-content li:last-of-type > a, .gearbox-dropdown-content ul li:last-of-type > a {
+  border-bottom-width: 1px;
+}
+/* line 303, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-divider, .gearbox-dropdown-content ul .gearbox-divider {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #0c0e24;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #585b70;
+  text-transform: uppercase;
+}
+/* line 314, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-divider + li > a, .gearbox-dropdown-content ul .gearbox-divider + li > a {
+  border-top-width: 0;
+}
+/* line 318, ../scss/style.scss */
+.gearbox-dropdown-content a, .gearbox-dropdown-content .gearbox-search, .gearbox-dropdown-content .gearbox-divider, .gearbox-dropdown-content ul a, .gearbox-dropdown-content ul .gearbox-search, .gearbox-dropdown-content ul .gearbox-divider {
+  /* Force Hardware Acceleration */
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+}
+/* line 326, ../scss/style.scss */
+.gearbox-dropdown-content.is-hidden, .gearbox-dropdown-content ul.is-hidden {
+  /* push the secondary dropdown items to the right */
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+}
+/* line 331, ../scss/style.scss */
+.gearbox-dropdown-content.is-hidden > li > a, .gearbox-dropdown-content.is-hidden > li > .gearbox-search, .gearbox-dropdown-content.is-hidden > .gearbox-divider, .gearbox-dropdown-content.move-out > li > a, .gearbox-dropdown-content.move-out > li > .gearbox-search, .gearbox-dropdown-content.move-out > .gearbox-divider, .gearbox-dropdown-content ul.is-hidden > li > a, .gearbox-dropdown-content ul.is-hidden > li > .gearbox-search, .gearbox-dropdown-content ul.is-hidden > .gearbox-divider, .gearbox-dropdown-content ul.move-out > li > a, .gearbox-dropdown-content ul.move-out > li > .gearbox-search, .gearbox-dropdown-content ul.move-out > .gearbox-divider {
+  /* lower down the dropdown items opacity - when secondary dropdown slides in or for dropdown items hidden on the right */
+  opacity: 0;
+}
+/* line 341, ../scss/style.scss */
+.gearbox-dropdown-content.move-out > li > a, .gearbox-dropdown-content.move-out > li > .gearbox-search, .gearbox-dropdown-content.move-out > .gearbox-divider, .gearbox-dropdown-content ul.move-out > li > a, .gearbox-dropdown-content ul.move-out > li > .gearbox-search, .gearbox-dropdown-content ul.move-out > .gearbox-divider {
+  /* push the dropdown items to the left when secondary dropdown slides in */
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+/* line 348, ../scss/style.scss */
+.dropdown-is-active .gearbox-dropdown-content, .dropdown-is-active .gearbox-dropdown-content ul {
+  -webkit-overflow-scrolling: touch;
+}
+@media only screen and (min-width: 768px) {
+  /* line 271, ../scss/style.scss */
+  .gearbox-dropdown-content, .gearbox-dropdown-content ul {
+    padding-top: 60px;
+  }
+  /* line 355, ../scss/style.scss */
+  .gearbox-dropdown-content a, .gearbox-dropdown-content ul a {
+    font-size: 1.8rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  /* line 271, ../scss/style.scss */
+  .gearbox-dropdown-content, .gearbox-dropdown-content ul {
+    padding-top: 0;
+    overflow: visible;
+  }
+  /* line 364, ../scss/style.scss */
+  .gearbox-dropdown-content a, .gearbox-dropdown-content ul a {
+    color: #111433;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.5rem;
+    border-color: #ebebeb;
+  }
+  /* line 372, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-divider, .gearbox-dropdown-content ul .gearbox-divider {
+    background-color: transparent;
+    color: #b3b3b3;
+    border-top: 1px solid #ebebeb;
+  }
+  /* line 378, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-divider + li > a, .gearbox-dropdown-content ul .gearbox-divider + li > a {
+    border-top-width: 1px;
+  }
+  /* line 382, ../scss/style.scss */
+  .gearbox-dropdown-content.is-hidden > li > a, .gearbox-dropdown-content.is-hidden > li > .gearbox-search, .gearbox-dropdown-content.is-hidden > .gearbox-divider, .gearbox-dropdown-content.move-out > li > a, .gearbox-dropdown-content.move-out > li > .gearbox-search, .gearbox-dropdown-content.move-out > .gearbox-divider, .gearbox-dropdown-content ul.is-hidden > li > a, .gearbox-dropdown-content ul.is-hidden > li > .gearbox-search, .gearbox-dropdown-content ul.is-hidden > .gearbox-divider, .gearbox-dropdown-content ul.move-out > li > a, .gearbox-dropdown-content ul.move-out > li > .gearbox-search, .gearbox-dropdown-content ul.move-out > .gearbox-divider {
+    /* reset mobile style */
+    opacity: 1;
+  }
+}
+
+/* line 396, ../scss/style.scss */
+.gearbox-dropdown-content .see-all a {
+  /* different style for the See all links */
+  color: #EF2D56;
+}
+/* line 401, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-gallery .gearbox-dropdown-item, .gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item {
+  /* items with picture (or icon) and title */
+  height: 80px;
+  line-height: 80px;
+}
+/* line 406, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-gallery .gearbox-dropdown-item h3, .gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item h3 {
+  /* truncate text with ellipsis if too long */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 414, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-gallery .gearbox-dropdown-item {
+  padding-left: 90px;
+}
+/* line 418, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-gallery img {
+  position: absolute;
+  display: block;
+  height: 40px;
+  width: auto;
+  left: 20px;
+  top: 50%;
+  margin-top: -20px;
+}
+/* line 428, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item {
+  padding-left: 75px;
+  position: relative;
+}
+/* line 432, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item p {
+  color: #111433;
+  font-size: 1.3rem;
+  /* hide description on small devices */
+  display: none;
+}
+/* line 439, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item::before {
+  /* item icon */
+  content: '';
+  display: block;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  margin-top: -20px;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 40px 40px;
+}
+/* line 454, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item.item-1::before {
+  background-image: url("../img/nucleo-icon-1.svg");
+}
+/* line 458, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item.item-2::before {
+  background-image: url("../img/nucleo-icon-2.svg");
+}
+/* line 462, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item.item-3::before {
+  background-image: url("../img/nucleo-icon-3.svg");
+}
+/* line 466, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item.item-4::before {
+  background-image: url("../img/nucleo-icon-4.svg");
+}
+/* line 470, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item.item-5::before {
+  background-image: url("../img/nucleo-icon-5.svg");
+}
+/* line 474, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item.item-6::before {
+  background-image: url("../img/nucleo-icon-6.svg");
+}
+/* line 478, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item.item-7::before {
+  background-image: url("../img/nucleo-icon-7.svg");
+}
+/* line 482, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item.item-8::before {
+  background-image: url("../img/nucleo-icon-8.svg");
+}
+/* line 486, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item.item-9::before {
+  background-image: url("../img/nucleo-icon-9.svg");
+}
+/* line 490, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item.item-10::before {
+  background-image: url("../img/nucleo-icon-10.svg");
+}
+/* line 494, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item.item-11::before {
+  background-image: url("../img/nucleo-icon-11.svg");
+}
+/* line 498, ../scss/style.scss */
+.gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item.item-12::before {
+  background-image: url("../img/nucleo-icon-12.svg");
+}
+@media only screen and (min-width: 1024px) {
+  /* line 394, ../scss/style.scss */
+  .gearbox-dropdown-content {
+    /* reset mobile style */
+    position: static;
+    height: auto;
+    width: 280px;
+  }
+  /* line 509, ../scss/style.scss */
+  .gearbox-dropdown-content > li:last-of-type a {
+    border-bottom: none;
+  }
+  /* line 513, ../scss/style.scss */
+  .no-touch .gearbox-dropdown-content > li:not(.has-children) a:hover {
+    color: #EF2D56;
+  }
+  /* line 517, ../scss/style.scss */
+  .gearbox-dropdown-content.move-out > li > a, .gearbox-dropdown-content.move-out > li > .gearbox-search, .gearbox-dropdown-content.move-out > .gearbox-divider {
+    /* reset mobile style */
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  /* line 525, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown, .gearbox-dropdown-content .gearbox-dropdown-gallery, .gearbox-dropdown-content .gearbox-dropdown-icons {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    left: 100%;
+    height: auto;
+    background-color: #ffffff;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
+  }
+  /* line 20, ../bourbon/addons/_clearfix.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown::after, .gearbox-dropdown-content .gearbox-dropdown-gallery::after, .gearbox-dropdown-content .gearbox-dropdown-icons::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  /* line 533, ../scss/style.scss */
+  .open-to-left .gearbox-dropdown-content .gearbox-secondary-dropdown, .open-to-left .gearbox-dropdown-content .gearbox-dropdown-gallery, .open-to-left .gearbox-dropdown-content .gearbox-dropdown-icons {
+    /* use the .open-to-left class if you want to open the dropdown on the left */
+    left: auto;
+    right: 100%;
+  }
+  /* line 539, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown.is-hidden, .gearbox-dropdown-content .gearbox-dropdown-gallery.is-hidden, .gearbox-dropdown-content .gearbox-dropdown-icons.is-hidden {
+    /* reset mobile style */
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+  /* line 544, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown.fade-in, .gearbox-dropdown-content .gearbox-dropdown-gallery.fade-in, .gearbox-dropdown-content .gearbox-dropdown-icons.fade-in {
+    /* animate secondary dropdown items when hovering over of of the .gearbox-dropdown-content list items */
+    -webkit-animation: gearbox-fade-in 0.2s;
+    -moz-animation: gearbox-fade-in 0.2s;
+    animation: gearbox-fade-in 0.2s;
+  }
+  /* line 549, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown.fade-out, .gearbox-dropdown-content .gearbox-dropdown-gallery.fade-out, .gearbox-dropdown-content .gearbox-dropdown-icons.fade-out {
+    /* animate secondary dropdown items when hovering over of of the .gearbox-dropdown-content list items */
+    -webkit-animation: gearbox-fade-out 0.2s;
+    -moz-animation: gearbox-fade-out 0.2s;
+    animation: gearbox-fade-out 0.2s;
+  }
+  /* line 554, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown > .go-back, .gearbox-dropdown-content .gearbox-dropdown-gallery > .go-back, .gearbox-dropdown-content .gearbox-dropdown-icons > .go-back {
+    display: none;
+  }
+  /* line 558, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown > .see-all, .gearbox-dropdown-content .gearbox-dropdown-gallery > .see-all, .gearbox-dropdown-content .gearbox-dropdown-icons > .see-all {
+    position: absolute;
+    bottom: 20px;
+    height: 45px;
+    text-align: center;
+  }
+  /* line 564, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown > .see-all a, .gearbox-dropdown-content .gearbox-dropdown-gallery > .see-all a, .gearbox-dropdown-content .gearbox-dropdown-icons > .see-all a {
+    margin: 0;
+    height: 100%;
+    line-height: 45px;
+    background: #ebebeb;
+    pointer-events: auto;
+    -webkit-transition: color 0.2s, background-color 0.2s;
+    -moz-transition: color 0.2s, background-color 0.2s;
+    transition: color 0.2s, background-color 0.2s;
+  }
+  /* line 572, ../scss/style.scss */
+  .no-touch .gearbox-dropdown-content .gearbox-secondary-dropdown > .see-all a:hover, .no-touch .gearbox-dropdown-content .gearbox-dropdown-gallery > .see-all a:hover, .no-touch .gearbox-dropdown-content .gearbox-dropdown-icons > .see-all a:hover {
+    color: #ffffff;
+    background-color: #111433;
+  }
+  /* line 579, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown .gearbox-dropdown-item, .gearbox-dropdown-content .gearbox-secondary-dropdown a, .gearbox-dropdown-content .gearbox-dropdown-gallery .gearbox-dropdown-item, .gearbox-dropdown-content .gearbox-dropdown-gallery a, .gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item, .gearbox-dropdown-content .gearbox-dropdown-icons a {
+    border: none;
+  }
+  /* line 584, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-dropdown-gallery, .gearbox-dropdown-content .gearbox-dropdown-icons {
+    padding: 20px 30px 100px;
+  }
+  /* line 587, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-dropdown-gallery > .see-all, .gearbox-dropdown-content .gearbox-dropdown-icons > .see-all {
+    width: calc(100% - 60px);
+  }
+  /* line 592, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-dropdown-icons > li, .gearbox-dropdown-content .gearbox-secondary-dropdown > li {
+    width: 50%;
+    float: left;
+  }
+  /* line 596, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown {
+    overflow: hidden;
+    width: 550px;
+    padding-bottom: 65px;
+  }
+  /* line 601, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown::before {
+    /* this is the separation line in the middle of the .gearbox-secondary-dropdown element */
+    position: absolute;
+    content: '';
+    top: 290px;
+    left: 15px;
+    height: 1px;
+    width: 520px;
+    background-color: #ebebeb;
+  }
+  /* line 612, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown > li > a {
+    color: #EF2D56;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    line-height: 30px;
+    height: 30px;
+    pointer-events: none;
+  }
+  /* line 620, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown > li > a::after, .gearbox-dropdown-content .gearbox-secondary-dropdown > li > a::before {
+    /* hide the arrow */
+    display: none;
+  }
+  /* line 626, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown.move-out > li > a {
+    /* reset mobile style */
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+  /* line 631, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown > li {
+    margin: 20px 0;
+    border-right-width: 1px;
+    border-color: #ebebeb;
+    border-style: solid;
+    padding: 0 30px;
+    height: 250px;
+  }
+  /* line 640, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown > li:nth-of-type(2n) {
+    border-right-width: 0;
+  }
+  /* line 644, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown > li > ul {
+    /* reset mobile style */
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -ms-transform: translate(0);
+    -o-transform: translate(0);
+    transform: translate(0);
+    position: relative;
+    height: auto;
+  }
+  /* line 650, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown > li > ul > .go-back {
+    display: none;
+  }
+  /* line 655, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown a {
+    line-height: 25px;
+    height: 25px;
+    font-size: 1.3rem;
+    padding-left: 0;
+  }
+  /* line 661, ../scss/style.scss */
+  .no-touch .gearbox-dropdown-content .gearbox-secondary-dropdown a:hover {
+    color: #EF2D56;
+  }
+  /* line 666, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown ul {
+    padding-bottom: 25px;
+    overflow: hidden;
+    height: auto;
+  }
+  /* line 672, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown .go-back a {
+    padding-left: 20px;
+    color: transparent;
+  }
+  /* line 676, ../scss/style.scss */
+  .no-touch .gearbox-dropdown-content .gearbox-secondary-dropdown .go-back a:hover {
+    color: transparent;
+  }
+  /* line 680, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown .go-back a::before, .gearbox-dropdown-content .gearbox-secondary-dropdown .go-back a::after {
+    left: 0;
+  }
+  /* line 685, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-secondary-dropdown .see-all {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  /* line 693, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-dropdown-gallery {
+    width: 600px;
+    padding-bottom: 100px;
+  }
+  /* line 697, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-dropdown-gallery > li {
+    width: 48%;
+    float: left;
+    margin-right: 4%;
+  }
+  /* line 701, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-dropdown-gallery > li:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  /* line 706, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-dropdown-gallery .gearbox-dropdown-item {
+    padding: 0;
+    height: auto;
+    line-height: normal;
+    color: #EF2D56;
+    margin-bottom: 2em;
+  }
+  /* line 714, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-dropdown-gallery > li:nth-last-of-type(2) a,
+  .gearbox-dropdown-content .gearbox-dropdown-gallery > li:last-of-type a {
+    margin-bottom: 0;
+  }
+  /* line 719, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-dropdown-gallery img {
+    position: static;
+    height: auto;
+    width: 100%;
+    margin: 0 0 0.6em;
+  }
+  /* line 727, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-dropdown-icons {
+    width: 600px;
+  }
+  /* line 730, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item {
+    height: 80px;
+    line-height: 1.2;
+    padding: 24px 0 0 85px;
+  }
+  /* line 735, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item:hover {
+    background: #ebebeb;
+  }
+  /* line 739, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item h3 {
+    color: #EF2D56;
+    font-weight: bold;
+  }
+  /* line 744, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item p {
+    display: block;
+    font-size: 1.2rem;
+  }
+  /* line 749, ../scss/style.scss */
+  .gearbox-dropdown-content .gearbox-dropdown-icons .gearbox-dropdown-item::before {
+    left: 25px;
+  }
+  /* line 755, ../scss/style.scss */
+  .gearbox-dropdown-content > .has-children > ul {
+    visibility: hidden;
+  }
+  /* line 759, ../scss/style.scss */
+  .gearbox-dropdown-content > .has-children > ul.is-active {
+    /* when hover over .gearbox-dropdown-content items - show subnavigation */
+    visibility: visible;
+  }
+  /* line 764, ../scss/style.scss */
+  .gearbox-dropdown-content > .has-children > .gearbox-secondary-dropdown.is-active > li > ul {
+    /* if .gearbox-secondary-dropdown is visible - show also subnavigation */
+    visibility: visible;
+  }
+  /* line 769, ../scss/style.scss */
+  .gearbox-dropdown-content > .has-children > a.is-active {
+    /* hover effect for .gearbox-dropdown-content items with subnavigation */
+    box-shadow: inset 2px 0 0 #EF2D56;
+    color: #EF2D56;
+  }
+  /* line 774, ../scss/style.scss */
+  .gearbox-dropdown-content > .has-children > a.is-active::before, .gearbox-dropdown-content > .has-children > a.is-active::after {
+    background: #EF2D56;
+  }
+  /* line 780, ../scss/style.scss */
+  .open-to-left .gearbox-dropdown-content > .has-children > a.is-active {
+    box-shadow: inset -2px 0 0 #EF2D56;
+  }
+}
+
+@-webkit-keyframes gearbox-fade-in {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@-moz-keyframes gearbox-fade-in {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes gearbox-fade-in {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@-webkit-keyframes gearbox-fade-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: visible;
+  }
+}
+@-moz-keyframes gearbox-fade-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: visible;
+  }
+}
+@keyframes gearbox-fade-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: visible;
+  }
+}
+/* line 810, ../scss/style.scss */
+.gearbox-search input[type="search"] {
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background-color: #242743;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+}
+/* line 4, ../bourbon/css3/_placeholder.scss */
+.gearbox-search input[type="search"]::-webkit-input-placeholder {
+  color: #ffffff;
+}
+/* line 4, ../bourbon/css3/_placeholder.scss */
+.gearbox-search input[type="search"]::-moz-placeholder {
+  color: #ffffff;
+}
+/* line 4, ../bourbon/css3/_placeholder.scss */
+.gearbox-search input[type="search"]:-moz-placeholder {
+  color: #ffffff;
+}
+/* line 4, ../bourbon/css3/_placeholder.scss */
+.gearbox-search input[type="search"]:-ms-input-placeholder {
+  color: #ffffff;
+}
+/* line 824, ../scss/style.scss */
+.gearbox-search input[type="search"]:focus {
+  background: #ffffff;
+  color: #111433;
+  outline: none;
+}
+/* line 4, ../bourbon/css3/_placeholder.scss */
+.gearbox-search input[type="search"]:focus::-webkit-input-placeholder {
+  color: rgba(17, 20, 51, 0.4);
+}
+/* line 4, ../bourbon/css3/_placeholder.scss */
+.gearbox-search input[type="search"]:focus::-moz-placeholder {
+  color: rgba(17, 20, 51, 0.4);
+}
+/* line 4, ../bourbon/css3/_placeholder.scss */
+.gearbox-search input[type="search"]:focus:-moz-placeholder {
+  color: rgba(17, 20, 51, 0.4);
+}
+/* line 4, ../bourbon/css3/_placeholder.scss */
+.gearbox-search input[type="search"]:focus:-ms-input-placeholder {
+  color: rgba(17, 20, 51, 0.4);
+}
+@media only screen and (min-width: 1024px) {
+  /* line 810, ../scss/style.scss */
+  .gearbox-search input[type="search"] {
+    background-color: #ebebeb;
+  }
+  /* line 4, ../bourbon/css3/_placeholder.scss */
+  .gearbox-search input[type="search"]::-webkit-input-placeholder {
+    color: #b3b3b3;
+  }
+  /* line 4, ../bourbon/css3/_placeholder.scss */
+  .gearbox-search input[type="search"]::-moz-placeholder {
+    color: #b3b3b3;
+  }
+  /* line 4, ../bourbon/css3/_placeholder.scss */
+  .gearbox-search input[type="search"]:-moz-placeholder {
+    color: #b3b3b3;
+  }
+  /* line 4, ../bourbon/css3/_placeholder.scss */
+  .gearbox-search input[type="search"]:-ms-input-placeholder {
+    color: #b3b3b3;
+  }
+}
+
+/* line 843, ../scss/style.scss */
+.has-children > a, .go-back a {
+  position: relative;
+}
+/* line 846, ../scss/style.scss */
+.has-children > a::before, .has-children > a::after, .go-back a::before, .go-back a::after {
+  /* arrow icon in CSS - for element with nested unordered lists */
+  content: '';
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  display: inline-block;
+  height: 2px;
+  width: 10px;
+  background: #ffffff;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+/* line 859, ../scss/style.scss */
+.has-children > a::before, .go-back a::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 863, ../scss/style.scss */
+.has-children > a::after, .go-back a::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+@media only screen and (min-width: 1024px) {
+  /* line 869, ../scss/style.scss */
+  .has-children > a::before, .has-children > a::after, .go-back a::before, .go-back a::after {
+    background: #b3b3b3;
+  }
+}
+
+/* line 875, ../scss/style.scss */
+.has-children > a {
+  padding-right: 40px;
+}
+/* line 878, ../scss/style.scss */
+.has-children > a::before, .has-children > a::after {
+  /* arrow goes on the right side - children navigation */
+  right: 20px;
+  -webkit-transform-origin: 9px 50%;
+  -moz-transform-origin: 9px 50%;
+  -ms-transform-origin: 9px 50%;
+  -o-transform-origin: 9px 50%;
+  transform-origin: 9px 50%;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 887, ../scss/style.scss */
+  .open-to-left .gearbox-dropdown-content > .has-children > a {
+    padding-left: 40px;
+    padding-right: 20px;
+  }
+  /* line 891, ../scss/style.scss */
+  .open-to-left .gearbox-dropdown-content > .has-children > a::before, .open-to-left .gearbox-dropdown-content > .has-children > a::after {
+    right: auto;
+    left: 20px;
+    -webkit-transform-origin: 1px 50%;
+    -moz-transform-origin: 1px 50%;
+    -ms-transform-origin: 1px 50%;
+    -o-transform-origin: 1px 50%;
+    transform-origin: 1px 50%;
+  }
+}
+/* line 899, ../scss/style.scss */
+.gearbox-dropdown-content .go-back a {
+  padding-left: 40px;
+}
+/* line 902, ../scss/style.scss */
+.gearbox-dropdown-content .go-back a::before, .gearbox-dropdown-content .go-back a::after {
+  /* arrow goes on the left side - go back button */
+  left: 20px;
+  -webkit-transform-origin: 1px 50%;
+  -moz-transform-origin: 1px 50%;
+  -ms-transform-origin: 1px 50%;
+  -o-transform-origin: 1px 50%;
+  transform-origin: 1px 50%;
+}
+
+/* line 909, ../scss/style.scss */
+.gearbox-main-content {
+  background-color: #e6e6e6;
+  min-height: calc(100vh - 100px);
+  padding: 2em 5%;
+  line-height: 2;
+}
+
+/* line 916, ../scss/style.scss */
+.no-js .gearbox-dropdown-wrapper:hover .gearbox-dropdown {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* line 922, ../scss/style.scss */
+.no-js .gearbox-dropdown-wrapper .gearbox-close {
+  display: none;
+}
